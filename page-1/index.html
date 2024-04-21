@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="nameApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <title>Регистрация</title>
+</head>
+<body>
+  <div class="nameApp" ng-controller="nameController">
+    <p id="conRule">Введите свое имя, чтобы продолжить</p>
+    <input type="text" ng-model="name" placeholder="Введите свое имя" ng-disabled="isNameFixed">
+    <p id="nameCheck" ng-if="isNameinInput">Вы не ввели имя</p>
+    <p>Ваше имя: {{name}}</p>
+    <button type="submit" ng-click="fixName()" ng-disabled="isNameFixed">Принять</button>
+    <button type="submit" ng-click="changeName()">Изменить имя</button>
+
+    <div class="page-2" ng-if="isNameFixed">
+      <a id="nextPage" target="_blank" href="../page-2/index.html">Перейти к списку задач</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
